@@ -2,9 +2,9 @@ require("dotenv").config();
 
 const pgp = require("pg-promise")();
 
-const connect = `postgres://${process.env.DB_NAME}:${process.env.DB_PW}@localhost:5432/study`
+const connect = process.env.DATABASE_URL;
 
-const db = pgp(connect);
+const db = pgp(connect); 
 
 db.connect()
     .then(() => console.log("connect db sucessfully"))
