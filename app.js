@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var cors = require("cors");
-var morgan = require("morgan");
+// var morgan = require("morgan");
 var path = require("path");
 var Routes = require('./src/routes');
 const helmet = require("helmet");
@@ -10,7 +10,7 @@ const app = express();
 
 //Cau hinh middleware: 
 app.use(cors());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(helmet());
